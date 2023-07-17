@@ -19,9 +19,12 @@ const App = () => {
   useEffect(() => {
     const contactsData = localStorage.getItem(LS_KEY);
     const parsedContacts = JSON.parse(contactsData);
-
+console.log(parsedContacts);
     if (parsedContacts) {
       setContacts(parsedContacts);
+    }
+    else {
+      return;
     }
   }, []);
 
